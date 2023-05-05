@@ -530,19 +530,19 @@ abort:
     j abort
 
 /*
-    Interrupt vector table (_vector_table)
+    Default interrupt vector table (default_vector_table)
 */
 
 .section .trap, "ax"
-.global _vector_table
-.type _vector_table, @function
+.global default_vector_table
+.type default_vector_table, @function
 
 .option push
 .balign 0x100
 .option norelax
 .option norvc
 
-_vector_table:
+default_vector_table:
     j _start_trap
     .rept 31
     j _start_trap
